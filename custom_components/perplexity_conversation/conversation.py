@@ -1,4 +1,4 @@
-"""Conversation support for xAI Grok."""
+"""Conversation support for Perplexity."""
 
 from collections.abc import AsyncGenerator, Callable
 import json
@@ -181,7 +181,7 @@ async def _transform_stream(
 class OpenAIConversationEntity(
     conversation.ConversationEntity, conversation.AbstractConversationAgent
 ):
-    """Grok conversation agent."""
+    """Perplexity conversation agent."""
 
     _attr_has_entity_name = True
     _attr_name = None
@@ -193,8 +193,8 @@ class OpenAIConversationEntity(
         self._attr_device_info = dr.DeviceInfo(
             identifiers={(DOMAIN, entry.entry_id)},
             name=entry.title,
-            manufacturer="xAI",
-            model="Grok",
+            manufacturer="Perplexity",
+            model="Sonar",
             entry_type=dr.DeviceEntryType.SERVICE,
         )
         if self.entry.options.get(CONF_LLM_HASS_API):
@@ -291,8 +291,8 @@ class OpenAIConversationEntity(
                 LOGGER.error("Rate limited by OpenAI: %s", err)
                 raise HomeAssistantError("Rate limited or insufficient funds") from err
             except openai.OpenAIError as err:
-                LOGGER.error("Error talking to Grok: %s", err)
-                raise HomeAssistantError("Error talking to Grok") from err
+                LOGGER.error("Error talking to Sonar: %s", err)
+                raise HomeAssistantError("Error talking to Sonar") from err
 
             messages.extend(
                 [
