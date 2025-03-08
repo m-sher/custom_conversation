@@ -79,20 +79,20 @@ async def _transform_stream(
 ) -> AsyncGenerator[conversation.AssistantContentDeltaDict]:
     """Transform an OpenAI delta stream into HA format."""
     
-    async for chunk in result:
+    async for i, chunk in enumerate(result):
         LOGGER.debug("Received chunk: %s", chunk)
         choice = chunk.choices[0]
 
         if choice.finish_reason:
             break
 
-        delta = chunk.choices[0].delta
+        delta = choice.delta
 
-        # We can yield delta messages
-        yield {  # type: ignore[misc]
-            key: value
-            for key in ("role", "content")
-            if (value := getattr(delta, key)) is not None
+        # Yield delta messages
+        # Chunks after first not expected to include role
+        yield {
+            "role": delta.role if i != 0 else None,
+            "content": delta.content,
         }
 
 class OpenAIConversationEntity(
