@@ -280,10 +280,10 @@ class OpenAIConversationEntity(
                 "stream": True,
             }
 
-            if model.startswith("o"):
-                model_args["reasoning_effort"] = options.get(
-                    CONF_REASONING_EFFORT, RECOMMENDED_REASONING_EFFORT
-                )
+            # if model.startswith("o"):
+            #     model_args["reasoning_effort"] = options.get(
+            #         CONF_REASONING_EFFORT, RECOMMENDED_REASONING_EFFORT
+            #     )
 
             try:
                 result = await client.chat.completions.create(**model_args)
