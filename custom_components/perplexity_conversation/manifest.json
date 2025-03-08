@@ -2,7 +2,7 @@
   "domain": "perplexity_conversation",
   "name": "Perplexity Conversation",
   "after_dependencies": ["assist_pipeline", "intent"],
-  "codeowners": ["@braytonstafford", "@m-sher"],
+  "codeowners": ["@m-sher"],
   "config_flow": true,
   "dependencies": ["conversation"],
   "documentation": "https://github.com/m-sher/custom_conversation",
