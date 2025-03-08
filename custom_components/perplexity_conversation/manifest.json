@@ -1,0 +1,14 @@
+{
+  "domain": "perplexity_conversation",
+  "name": "Perplexity Conversation",
+  "after_dependencies": ["assist_pipeline", "intent"],
+  "codeowners": ["@braytonstafford", "@m-sher"],
+  "config_flow": true,
+  "dependencies": ["conversation"],
+  "documentation": "https://github.com/m-sher/custom_conversation",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/m-sher/custom_conversation/issues",
+  "requirements": ["openai==1.61.0"],
+  "version": "0.6.6"
+}
