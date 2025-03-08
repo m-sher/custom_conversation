@@ -2,7 +2,7 @@
 
 import logging
 
-DOMAIN = "grok_conversation"
+DOMAIN = "perplexity_conversation"
 LOGGER = logging.getLogger(__package__)
 
 CONF_RECOMMENDED = "recommended"

@@ -45,35 +45,7 @@
       }
     }
   },
-  "services": {
-    "generate_image": {
-      "name": "Generate image",
-      "description": "Turn a prompt into an image",
-      "fields": {
-        "config_entry": {
-          "name": "Config Entry",
-          "description": "The config entry to use for this action"
-        },
-        "prompt": {
-          "name": "Prompt",
-          "description": "The text to turn into an image",
-          "example": "A photo of a dog"
-        },
-        "size": {
-          "name": "Size",
-          "description": "The size of the image to generate"
-        },
-        "quality": {
-          "name": "Quality",
-          "description": "The quality of the image that will be generated"
-        },
-        "style": {
-          "name": "Style",
-          "description": "The style of the generated image"
-        }
-      }
-    }
-  },
+  "services": {},
   "exceptions": {
     "invalid_config_entry": {
       "message": "Invalid config entry provided. Got {config_entry}"

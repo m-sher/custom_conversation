@@ -8,7 +8,7 @@ generate_image:
       required: true
       selector:
         config_entry:
-          integration: grok_conversation
+          integration: perplexity_conversation
     prompt:
       name: "Prompt"
       description: "The text to turn into an image"
